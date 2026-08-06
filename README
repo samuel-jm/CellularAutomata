@@ -1,0 +1,27 @@
+# CellularAutomata
+
+CellularAutomata is a Java application created Swing for running different cellular automata
+simulations, including [Elementary Cellular Automaton](https://en.wikipedia.org/wiki/Elementary_cellular_automaton) and [Conway's game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+
+## Features
+
+- Grid for viewing the state of the simulation
+- Control panel for various user input
+	- Start, Stop, Step
+	- Randomise grid
+	- Set simulation rules
+	- etc.
+
+## Requirements
+
+Java
+
+## How to Use
+
+1. Clone the repository
+1. Open the project in any Java IDE
+1. Run the project
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
