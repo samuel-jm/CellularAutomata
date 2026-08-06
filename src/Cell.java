@@ -1,3 +1,6 @@
+/**
+ * This class is responsible for individual grid cells and their current state (alive or dead)
+ */
 public class Cell {
     private boolean alive_;
 

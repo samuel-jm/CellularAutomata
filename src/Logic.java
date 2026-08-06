@@ -1,7 +1,14 @@
 import java.util.Random;
 
+/**
+ * This abstract class represents a base for the simulation's stepping logic,
+ * it is used to implement the Template Method pattern where <c>tick()</c> defines
+ * the method's structure and concrete implementations of <c>Logic</c> defines how <c>tick()</c>
+ * is implemented
+ */
 public abstract class Logic {
     protected String ruleString_;
+    /** Whether neighbour checking allows wrapping from one grid edge to the opposite edge */
     protected boolean wrap_;
     protected static Random random_ = new Random();
 
@@ -10,6 +17,11 @@ public abstract class Logic {
         wrap_ = true;
     }
 
+    /**
+     * This method defines the base for the Template Method pattern
+     * @param cells The current 2D array of cells
+     * @return The modified 2D array of cells
+     */
     public Cell[][] tick(Cell[][] cells) {
         Cell[][] newCells = new Cell[cells.length][cells[0].length];
         Utilities.initCells(newCells, false);

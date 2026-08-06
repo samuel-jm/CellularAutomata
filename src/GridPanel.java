@@ -3,6 +3,10 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * This class is responsible for displaying the grid of cells, it holds reference to a 2D array of <c>Cell</c> which
+ * is updated every render
+ */
 public class GridPanel extends JPanel implements MouseListener {
     private Cell[][] cells_;
     private int cellSize_;
@@ -16,16 +20,7 @@ public class GridPanel extends JPanel implements MouseListener {
 
         cells_ = new Cell[panelSize / cellSize][panelSize / cellSize];
         cellSize_ = cellSize;
-        setArrayState(cells_, false);
-    }
-
-    private void setArrayState(Cell[][] cells, boolean alive) {
-        for(int row = 0; row < cells.length; row++) {
-            for(int col = 0; col < cells.length; col++) {
-                cells[row][col] = new Cell(alive);
-                cells[row][col].setAlive(alive);
-            }
-        }
+        Utilities.initCells(cells_, false);
     }
 
     public void render(Cell[][] cells) {
@@ -33,6 +28,11 @@ public class GridPanel extends JPanel implements MouseListener {
         repaint();
     }
 
+    /**
+     * This method renders the cells by setting the background to white, and for every cell which is alive, render a
+     * black square at the appropriate (x,y) coordinate
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

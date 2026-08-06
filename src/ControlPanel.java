@@ -4,6 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
+/**
+ * This class is responsible for displaying the control panel, it holds reference to a <c>Controller</c> which
+ * it uses to signal user interaction
+ */
 public class ControlPanel extends JPanel implements ActionListener {
     private final Controller controller_;
     private Pattern regularPattern = Pattern.compile("B[0-9]{0,8}[/]S[0-9]{0,8}");
@@ -129,7 +133,6 @@ public class ControlPanel extends JPanel implements ActionListener {
         constraints.gridx = 1;
         constraints.gridy = 6;
         add(elementary, constraints);
-
 
         //Exit
         constraints.anchor = GridBagConstraints.PAGE_END;

@@ -1,5 +1,8 @@
 import javax.swing.*;
 
+/**
+ * This class acts as a container for both the control panel and grid panel
+ */
 public class Window extends JFrame {
     private final GridPanel _gridPanel;
 

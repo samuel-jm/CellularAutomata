@@ -2,12 +2,24 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CellularAutomata extends JPanel implements Controller {
+/**
+ * This class represents the main application, it is responsible for
+ * setting up the simulation as well as initialising the UI and responding
+ * to UI events according to the <c>Controller</c> interface which it implements
+ */
+public class CellularAutomata implements Controller {
     private State state_;
     private Logic logic_;
     private Cell[][] cells_;
     private final Window _window;
 
+    /**
+     * This constructor initialises the application and starts a timer
+     * which is used to set the simulation speed
+     * @param width the width in pixels of the app
+     * @param height the height in pixels of the app
+     * @param cellSize the square size in pixels of each grid cell (should be a multiple of <c>height</c> for a grid that is flush with the JPanel that contains it)
+     */
     public CellularAutomata(int width, int height, int cellSize) {
         logic_ = new RegularLogic("B3/S23");
         cells_ = new Cell[height / cellSize][height / cellSize];
@@ -30,7 +42,7 @@ public class CellularAutomata extends JPanel implements Controller {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CellularAutomata(1000, 750, 5);
+                new CellularAutomata(1000, 753, 5);
             }
         });
     }
